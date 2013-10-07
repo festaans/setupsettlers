@@ -28,7 +28,10 @@ var tile = [{"name" : "desert", "number" : "R"}, {"name" : "wool", "number" : nu
 //
 shuffle(tile);
 //
-console.log(tile);
+tile.forEach(function(entry) {
+    console.log(entry);
+});
+//
 $(document).ready(function(){
 var one 		= document.getElementById('one');
 var two 		= document.getElementById('two');

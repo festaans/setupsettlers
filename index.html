@@ -4,126 +4,8 @@
 <title>Catan</title>
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="assets/css/animate-custom.css">
-<style type="text/css">
-	body {
-		background: rgb(0,153,204);
-	}
-	.container {
-		padding-top: 50px;
-		padding-bottom: 50px;
-	}
-	span {
-		height: 184px;
-		display: inline-block;
-		margin-top: -23px;
-		margin-bottom: -23px;
-		padding: 62px;
-		text-align: center;
-		font-family: serif;
-		font-weight: bold;
-		color: #000000;
-		 -webkit-mask-image: url(assets/hex.svg);
-		 -webkit-background-size: 15px 15px;
-		-moz-background-size: 15px 15px;
-		background-size: 15px 15px;
-		-moz-box-shadow: 1px 1px 8px gray;
-	}
-	span p {
-		display: block;
-		text-align: center;
-		line-height: 60px;
-		width: 60px;
-		font-size: 24px;
-		margin: auto;
-		background: rgb(240,230,190);
-		border-radius: 50%;
-		-moz-box-shadow:    0px 2px 2px 1px rgba(0,0,0,0.6);
-  		-webkit-box-shadow: 0px 2px 2px 1px rgba(0,0,0,0.6);
-  		box-shadow:         0px 2px 2px 1px rgba(0,0,0,0.6);
-	}
-	p i {
-		color: #cc0000;
-		font-style: normal;
-	}
-	.desert p {
-		background: rgba(0,0,0,0.7);
-	}
-	.wool {
-background-color: #99cc33;
-background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
-background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -ms-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -o-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+<link rel="stylesheet" type="text/css" href="assets/css/app.css">
 
-	}
-	.wood {
-background-color: #006633;
-background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
-background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -ms-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -o-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-
-	}
-	.clay {
-background-color: #663300;
-background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
-background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -ms-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -o-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-
-	}
-	.ore {
-background-color: #666666;
-background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
-background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -ms-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -o-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-
-	}
-	.wheat {
-background-color: #ffcc33;
-background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
-background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -ms-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: -o-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-background-image: linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-
-	}
-	.desert {
-background-color: #ffcc66;
-background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
-background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .5) 50%, transparent 50%, transparent);
-background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, .5) 50%, transparent 50%, transparent);
-background-image: -ms-linear-gradient(0deg, rgba(255, 255, 255, .5) 50%, transparent 50%, transparent);
-background-image: -o-linear-gradient(0deg, rgba(255, 255, 255, .5) 50%, transparent 50%, transparent);
-background-image: linear-gradient(0deg, rgba(255, 255, 255, .5) 50%, transparent 50%, transparent);
-
-	}
-.container {
-	max-width: none !important;
-	width: 970px;
-}
-
-.board {
-	position: absolute;
-	top: 20px;
-	bottom: -40px;
-	left: 10%;
-	right: 10%;
-	background: rgb(240,230,190);
-	-webkit-clip-path: polygon(280px 0px,750px 0px, 970px 380px, 730px 790px, 300px 790px, 50px 380px);
-	z-index: -9;
-}
-</style>
 <script type="text/javascript" src="assets/js/jquery.js"></script>
 <script type="text/javascript" src="assets/js/app.js"></script>
 </head>
@@ -131,7 +13,10 @@ background-image: linear-gradient(0deg, rgba(255, 255, 255, .5) 50%, transparent
 <div class="container">
 
 	<div class="row">
-		<span id="one" class="col-xs-2 col-xs-offset-3 "></span>
+		<span type="button" id="new" class="col-xs-2 col-xs-offset-1">
+		<p class="glyphicon glyphicon-refresh" style="height:60px; line-height:56px; cursor:pointer;" onClick="window.location.reload()"></p>
+		</span>
+		<span id="one" class="col-xs-2 "></span>
 		<span id="two" class="col-xs-2 "></span>
 		<span id="three" class="col-xs-2 "></span>
 	</div>
